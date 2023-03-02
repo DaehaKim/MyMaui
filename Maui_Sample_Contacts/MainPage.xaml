@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:fa="clr-namespace:PassXYZ.Vault.Resources.Styles"
              x:Class="Maui_Sample_Contacts.MainPage">
 
     <ScrollView>
@@ -27,19 +28,38 @@
                 SemanticProperties.Description="Welcome to dot net Multi platform App U I"
                 FontSize="18"
                 HorizontalOptions="Center" />
+            
             <HorizontalStackLayout HorizontalOptions="Center" >
                 <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                Margin="10"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"/>
+                    x:Name="CounterBtn"
+                    Text="Click me"
+                    FontAttributes="Bold"
+                    Grid.Row="3"
+                    Margin="10"
+                    SemanticProperties.Hint="Counts the number of times you click"
+                    Clicked="OnCounterClicked">
+                    <Button.ImageSource>
+                        <FontImageSource FontFamily="FontAwesomeSolid"
+                                         Glyph="{x:Static fa:FontAwesomeSolid.CirclePlus}"
+                                         Color="{DynamicResource Yellow200Accent}"
+                                         Size="16"/>
+                    </Button.ImageSource>
+                </Button>
 
                 <Button
-                x:Name="SelectContactBtn"
-                Text="Select Contact"
-                Margin="10"
-                Clicked="SelectContactButton_Clicked"/>
+                    x:Name="SelectContactBtn"
+                    Text="Select Contact"
+                    FontAttributes="Bold"
+                    Grid.Row="3"
+                    Margin="10"
+                    Clicked="SelectContactButton_Clicked">
+                    <Button.ImageSource>
+                        <FontImageSource FontFamily="FontAwesomeSolid"
+                                         Glyph="{x:Static fa:FontAwesomeSolid.User}"
+                                         Color="{DynamicResource Cyan200Accent}"
+                                         Size="16"/>
+                    </Button.ImageSource>
+                </Button>
             </HorizontalStackLayout>
 
         </VerticalStackLayout>
